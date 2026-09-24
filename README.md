@@ -69,7 +69,13 @@ Follow-ups:
 - "only show the lines from the parent state to the executors, then hide them"
 
 ```md
-Modify the shadow replay animation to be tailored to this real example, which is what motivated its creation: *(pasted the T11 incident summary and the Relay mainnet examples)*
+Modify the shadow replay animation to be tailored to this real example, which is what motivated its creation:
+
+The partner incident was a T11 compatibility regression on September 10, 2026, at 14:00 UTC: strict ABI decoding fixed a DoS vulnerability but also rejected harmless trailing calldata that integrations previously used. Bridge’s padded supply-check calls blocked USDB minting/burning; Relay’s transfers with appended order metadata reverted; Privy was reported affected through Relay, although direct Privy-originated failures were not established.
+
+Relay mainnet examples each have receipt status 0 and a 100-byte transfer(address,uint256) input: 68 standard bytes plus a 32-byte suffix.
+
+Bridge’s reported failure was in RPC supply checks, so that report provides no failed onchain transaction to list. Partners temporarily stripped trailing bytes; the T12 fix restored trailing-byte compatibility while retaining the DoS protections.
 ```
 
 - "update the compare copy to: `expected`: reject malformed ABI / `finding`: transfer with 32 bytes of trailing metadata"
