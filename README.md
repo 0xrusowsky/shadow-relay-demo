@@ -11,12 +11,14 @@ link: https://0xrusowsky.github.io/shadow-relay-demo
 
 ### 1. STF animation (ended up being discarded for the sake of time)
 
-> Make a short animation about how STF works on Tempo (a blockchain for global payments).
->
-> Your objective is to teach the very high-level foundations of blockchain execution (state/execution/STF). The idea is to make it like a gif that can be looped.
->
-> Refer to this style. We prefer the dark version.
-> https://tempo.xyz/developers/ · https://tempo.xyz/developers/blog · https://tempo.xyz/solutions/cross-border-payments/
+```md
+Make a short animation about how STF works on Tempo (a blockchain for global payments).
+
+Your objective is to teach the very high-level foundations of blockchain execution (state/execution/STF). The idea is to make it like a gif that can be looped.
+
+Refer to this style. We prefer the dark version.
+https://tempo.xyz/developers/ · https://tempo.xyz/developers/blog · https://tempo.xyz/solutions/cross-border-payments/
+```
 
 Follow-ups:
 - "drop the corner labels, make transitions slightly slower, make sure the inputs don't overlap the header, and write `execution binary` in the central box"
@@ -30,14 +32,16 @@ Follow-ups:
 
 ### 2. Gruyère cheese defense animation
 
-> Create another animation with the same style to showcase the gruyère cheese defense analogy: how adding layers improves security. Our current layers are:
-> - unit/e2e/integration tests
-> - code reviews (manual + agentic)
-> - re-execution tests, to catch STF-breaking changes on historical loads
-> - external security audits
-> - devnet, to catch bugs in the new hardfork (with synthetic loads)
-> - [we are now adding shadow forks], to catch STF-breaking changes on historical loads + bugs in the new hardfork (with real/live loads)
-> - testnet (staging) > mainnet (prod)
+```md
+Create another animation with the same style to showcase the gruyère cheese defense analogy: how adding layers improves security. Our current layers are:
+- unit/e2e/integration tests
+- code reviews (manual + agentic)
+- re-execution tests, to catch STF-breaking changes on historical loads
+- external security audits
+- devnet, to catch bugs in the new hardfork (with synthetic loads)
+- [we are now adding shadow forks], to catch STF-breaking changes on historical loads + bugs in the new hardfork (with real/live loads)
+- testnet (staging) > mainnet (prod)
+```
 
 Follow-ups:
 - "make testnet and mainnet like the other shapes, since devnet/shadow/testnet/mainnet are actual deployments"
@@ -49,8 +53,10 @@ Follow-ups:
 
 ### 3. Shadow replay animation
 
-> Create another animation with the same style to showcase how our shadow replayer works.
-> Ref: @shadow-fork-replayer/crates/node/src/shadow_replay/README.md
+```md
+Create another animation with the same style to showcase how our shadow replayer works.
+Ref: @shadow-fork-replayer/crates/node/src/shadow_replay/README.md
+```
 
 Follow-ups:
 - "let's emphasize more that it is a follower node"
@@ -62,13 +68,17 @@ Follow-ups:
 - "for the shadow, show S1′, S2′, S3′ and showcase that we override them with the canonical S1, S2, S3"
 - "only show the lines from the parent state to the executors, then hide them"
 
-> Modify the shadow replay animation to be tailored to this real example, which is what motivated its creation: *(pasted the T11 incident summary and the Relay mainnet examples)*
+```md
+Modify the shadow replay animation to be tailored to this real example, which is what motivated its creation: *(pasted the T11 incident summary and the Relay mainnet examples)*
+```
 
 - "update the compare copy to: `expected`: reject malformed ABI / `finding`: transfer with 32 bytes of trailing metadata"
 
 ### 4. T11 incident animation (the "why")
 
-> Since the audience is GTM, I think it's best to have an initial slide explaining how we patched the ABI bug where we could get DoSed, but broke a user-facing flow.
+```md
+Since the audience is GTM, I think it's best to have an initial slide explaining how we patched the ABI bug where we could get DoSed, but broke a user-facing flow.
+```
 
 Follow-ups:
 - "this slide is not up to the quality standards of the other ones" *(attached screenshot; it was rebuilt as an animation)*
@@ -78,21 +88,25 @@ Follow-ups:
 
 ### 5. Click-through navigation
 
-> modify the html files so that the frame transitions require me to click
+```md
+modify the html files so that the frame transitions require me to click
+```
 
 Follow-ups:
 - "gimme the ability to move back with the back arrow. Drop the CLICK hint"
 
 ## How the presentation was finally assembled
 
-> Create a new html file which is a presentation that leverages the individual animations. Use these images as reference for the title and chapter slides: *(attached template slide pictures)*
->
-> Title: "Hardening our development pipeline with the shadow replayer". Subtitle: "Internal demo".
->
-> GOAL: an internal demo for the GTM team to learn about the security practices of engineering's release pipeline. In this case we are demoing the shadow replayer. Guide them through these topics with the animations we created:
-> 1. the T11 incident
-> 2. the classic gruyère cheese security analogy
-> 3. the shadow replayer
+```md
+Create a new html file which is a presentation that leverages the individual animations. Use these images as reference for the title and chapter slides: *(attached template slide pictures)*
+
+Title: "Hardening our development pipeline with the shadow replayer". Subtitle: "Internal demo".
+
+GOAL: an internal demo for the GTM team to learn about the security practices of engineering's release pipeline. In this case we are demoing the shadow replayer. Guide them through these topics with the animations we created:
+1. the T11 incident
+2. the classic gruyère cheese security analogy
+3. the shadow replayer
+```
 
 Follow-ups:
 - "skip the agenda and all the explanatory text slides"
