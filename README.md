@@ -86,15 +86,6 @@ Follow-ups:
 - "unify the fix and side-effect frames; drop T11/T12 from the frame titles, the node box already shows them"
 - *(pasted the final 3-frame copy: Before / The fix / After)*
 
-### 5. Click-through navigation
-
-```md
-modify the html files so that the frame transitions require me to click
-```
-
-Follow-ups:
-- "gimme the ability to move back with the back arrow. Drop the CLICK hint"
-
 ## How the presentation was finally assembled
 
 ```md
